@@ -35,9 +35,8 @@
 
 
 
-Note:LCCM / LCCE is the GUI version of the Arm-Pi Tweaker, it is not safe for public release yet. It is more likely to damage your system so it is not included. I have noticed that some of the tools are giving the wrong information, I have to investigate this, im guessing claude opus was daydreaming again while helping me debug errors. I dont know what happened, but not only has opus become dumber than usual over the last week, Anthropic nerfed our enterprise accounts so updates and fixes may be slower than usual as I am the only human on this entire project.
 
-Update: I made the mistake of paying for the use of highend AI through Anthropic. Works greate on my work projects so figured why not give it a try, I asked it to clean up my code. Apparently it removed some of the functions instead of cleaning them up and now the application shows faked outputs. Most of the Arm-pi Tweaker is fine, but if you get an output that you know doesn't match your device, please open a new issue and let me know.
+Update: I made the mistake of paying for the use of high end AI model through Anthropic. It used to be great and we use it as one of the models at work so I figured I'd give it a shot on my hobby projects. I asked it to clean up my code and apparently it removed some of the functions instead of cleaning them up. That wouldnt be to bad if that was all it did, now the application shows faked outputs. Most of the Arm-pi Tweaker is fine, but if you get an output that you know doesn't match your device, please open a new issue and let me know.
 
 # Orange-Pi Toolbox
 
