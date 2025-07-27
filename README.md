@@ -1,4 +1,4 @@
-7-26 Update: New version with TUI and GUI coming soon. Should be out this weekend sometime if I can get the image build function to work properly. I also have a .patch to fix hdmi issues on kernel 6.1
+**New Release**: Another alpha release. GUI is is included, dont expect much at this point. Some GPU and Kernel tools. I have a patch that can be applied to make HDMI in 6.1, but its not very stable. Seems like for some installs it works fine, for others it causes screen flickering and tearing, out of my test builds, I got 3 stable fully functional HDMI, 3 where it worked perfect for a few hours before the screen started flickering and tearing and 2 where it just crashed the pi. Once I get the patch stable ill include it in the Kernel patching section along with the live patch module. You have to build the kernel with the module to enable the patches. I have an audio and HDMI patch in the works. I am exhausted...sleep 
 
 
 
@@ -35,9 +35,6 @@
 
 
 
-Note:LCCM / LCCE is the GUI version of the Arm-Pi Tweaker, it is not safe for public release yet. It is more likely to damage your system so it is not included. I have noticed that some of the tools are giving the wrong information, I have to investigate this, im guessing claude opus was daydreaming again while helping me debug errors. I dont know what happened, but not only has opus become dumber than usual over the last week, Anthropic nerfed our enterprise accounts so updates and fixes may be slower than usual as I am the only human on this entire project.
-
-Update: I made the mistake of paying for the use of highend AI through Anthropic. Works greate on my work projects so figured why not give it a try, I asked it to clean up my code. Apparently it removed some of the functions instead of cleaning them up and now the application shows faked outputs. Most of the Arm-pi Tweaker is fine, but if you get an output that you know doesn't match your device, please open a new issue and let me know.
 
 # Orange-Pi Toolbox
 
@@ -323,6 +320,34 @@ cargo build --release
 cargo run --release
 ```
 
+## Building the TUI (CLI) Application
+
+Prerequisites: Rust toolchain (rustc, cargo).
+
+```bash
+# From the project root
+git pull
+cargo build
+cargo run
+```
+
+## Building the GUI (Qt) Application
+
+Prerequisites: Qt5/Qt6 development libraries, CMake ≥3.15, and a C++ compiler.
+
+```bash
+cd Tweaker-Gui
+# Use the provided build script
+./build.sh
+
+# Or build manually:
+# mkdir -p build && cd build
+# cmake .. && make -j$(nproc)
+
+# Then run the GUI
+./Tweaker-Gui
+```
+
 #### Typical Workflow
 1. **System Detection**: LCCE automatically detects your Orange Pi 5 Plus and current system
 2. **Module Configuration**: Configure kernel, video drivers, and multimedia options
@@ -597,47 +622,7 @@ cargo run -- --verbose
 - [x] **System Detection**: Hardware identification and configuration management
 - [x] **Documentation**: Comprehensive README and change log
 
-### 🚧 In Progress (LCCE Development)
-- [ ] **Kernel Module GUI**: Visual interface for kernel modifications
-- [ ] **Video Driver GUI**: Graphics driver configuration interface  
-- [ ] **Emulation Module GUI**: Multimedia and emulation setup
-- [ ] **Storage Installation Logic**: SD to NVMe/eMMC cloning system
-- [ ] **Progress Monitoring**: Real-time installation feedback
 
-### 📋 Planned Features
-- [ ] **LCCE Advanced Features**:
-  - [ ] Configuration profile save/load system
-  - [ ] Advanced partition management
-  - [ ] Network-based remote installation
-  - [ ] Automated system validation and testing
-- [ ] **Integration Improvements**:
-  - [ ] Add support for additional Orange Pi models
-  - [ ] Enhanced GPU driver compatibility checks
-  - [ ] Advanced performance profiling tools
-- [ ] **User Experience**:
-  - [ ] Interactive tutorials and help system
-  - [ ] Backup and restore functionality
-  - [ ] Custom theme support
-
-### 🔧 Technical Improvements
-- [ ] **Testing**:
-  - [ ] Write integration tests for burner and flasher modules
-  - [ ] Improve test coverage for error handling
-  - [ ] Add GUI automated testing for LCCE
-- [ ] **Optimization**:
-  - [ ] Optimize firmware flashing speed
-  - [ ] Reduce memory usage in UI components
-  - [ ] Improve LCCE startup time
-- [ ] **Documentation**:
-  - [ ] Expand technical documentation for each module
-  - [ ] Add examples for common use cases
-  - [ ] Create video tutorials for LCCE usage
-
-### 🌐 Community & Distribution
-- [ ] Create a community forum for user discussions
-- [ ] Add a contribution guide to the repository
-- [ ] Package LCCE for easy distribution
-- [ ] Create installation scripts for different platforms
 
 ## Troubleshooting
 
