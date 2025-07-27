@@ -5,8 +5,6 @@ This directory contains GPU drivers and firmware for the Orange Pi 5 Plus (RK358
 ## Successfully Downloaded Drivers
 
 ### Mali-G610 Valhall Proprietary Drivers
-- **libmali-valhall-g610-g13p0-wayland-gbm_1.9-1_arm64.deb** (12.0 MB)
-  - Latest stable proprietary Mali driver for Wayland/GBM
   - Recommended for GameScope builds
   - Provides full hardware acceleration
   - Version: 1.9-1 (g13p0 revision)
@@ -129,10 +127,6 @@ vkcube-wayland
 - **Firmware**: Various Linux kernel firmware repositories
 - **Mesa**: Ubuntu/Debian official repositories
 
-### Referenced Build Guides
-- GameScope_BuildGuide.txt
-- emulation_opensource_drivers.md
-- Kodi optimized.md
 
 ## Notes
 
